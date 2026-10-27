@@ -2,6 +2,17 @@
 
 Advanced Bookmarks is an XWiki extension for managing personal bookmarks in folders, with a page star and a quick-access panel.
 
+* Project Lead: [Christophe Neria](https://www.xwiki.org/xwiki/bin/view/XWiki/Christophe_cn)
+* Documentation & Downloads: [Documentation & Download](https://extensions.xwiki.org/xwiki/bin/view/Extension/Advanced%20Bookmarks/)
+* [Issue Tracker](https://jira.xwiki.org/browse/ADVBOOK)
+* Communication: [Forum](https://forum.xwiki.org/), [Chat](https://dev.xwiki.org/xwiki/bin/view/Community/Chat)
+* [Development Practices](https://dev.xwiki.org)
+* Minimal XWiki version supported: XWiki 17.10.2
+* License: LGPL 2.1
+* Translations: English, French
+* Sonar Dashboard: [![Status](https://sonarcloud.io/api/project_badges/measure?project=org.xwiki.contrib.advancedbookmarks:advanced-bookmarks&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.xwiki.contrib.advancedbookmarks:advanced-bookmarks)
+* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/job/XWiki%20Contrib/job/advanced-bookmarks/job/master/badge/icon)](https://ci.xwiki.org/job/XWiki%20Contrib/job/advanced-bookmarks/job/master/)
+
 The user and administrator documentation, published on extensions.xwiki.org, is kept in [docs/extensions.xwiki.org.xwiki](docs/extensions.xwiki.org.xwiki) (XWiki 2.1 syntax). This README is aimed at developers and administrators.
 
 ## Installation
