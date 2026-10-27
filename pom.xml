@@ -27,7 +27,7 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>parent-platform</artifactId>
-    <version>18.0.0</version>
+    <version>17.10</version>
   </parent>
 
   <groupId>org.xwiki.contrib.advancedbookmarks</groupId>
@@ -53,7 +53,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <repositories>
@@ -86,22 +85,4 @@
       </modules>
     </profile>
   </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <dependencies>
-          <!-- xwiki-platform-core declares this rule with ${project.version}, which resolves to this extension's own
-               version in a child project. Pin it to the platform version so the inherited rule can still run. -->
-          <dependency>
-            <groupId>org.xwiki.platform</groupId>
-            <artifactId>xwiki-platform-tool-enforcer-importmap</artifactId>
-            <version>${platform.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
 </project>

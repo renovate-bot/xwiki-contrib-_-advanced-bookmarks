@@ -21,7 +21,7 @@ Personal bookmarks for XWiki users, stored with their account rather than in the
 
 = Prerequisites =
 
-* XWiki 18.0.0 or later, running on Java 21.
+* XWiki 17.10.2 or later, running on Java 17 or later.
 * Solr embedded in XWiki (the default), or a remote Solr server in which an administrator creates the core of the extension (see [[Storage and backup>>||anchor="HStorageandbackup"]]).
 
 = Installation =

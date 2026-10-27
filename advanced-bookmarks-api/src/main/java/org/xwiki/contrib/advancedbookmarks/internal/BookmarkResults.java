@@ -89,26 +89,24 @@ public class BookmarkResults
      */
     public Map<String, Object> execute(Operation operation)
     {
+        // A single return keeps the Checkstyle ReturnCount rule. A subclass is caught before its parent class, which
+        // the compiler checks.
+        Map<String, Object> result;
         try {
-            return operation.run();
+            result = operation.run();
+        } catch (BookmarkAccessDeniedException e) {
+            result = error(FORBIDDEN, "forbidden");
+        } catch (BookmarkTooLargeException e) {
+            result = error(BAD_REQUEST, "tooLarge");
+        } catch (BookmarkInvalidDataException e) {
+            result = error(BAD_REQUEST, "invalid");
+        } catch (BookmarkStoreConflictException e) {
+            result = error(CONFLICT, "conflict");
         } catch (BookmarkException e) {
-            return toError(e);
+            this.logger.error("Advanced Bookmarks operation failed.", e);
+            result = error(SERVER_ERROR, "storageError");
         }
-    }
-
-    private Map<String, Object> toError(BookmarkException exception)
-    {
-        // A subclass comes before its parent class, which the compiler checks.
-        return switch (exception) {
-            case BookmarkAccessDeniedException denied -> error(FORBIDDEN, "forbidden");
-            case BookmarkTooLargeException tooLarge -> error(BAD_REQUEST, "tooLarge");
-            case BookmarkInvalidDataException invalid -> error(BAD_REQUEST, "invalid");
-            case BookmarkStoreConflictException conflict -> error(CONFLICT, "conflict");
-            default -> {
-                this.logger.error("Advanced Bookmarks operation failed.", exception);
-                yield error(SERVER_ERROR, "storageError");
-            }
-        };
+        return result;
     }
 
     /**
