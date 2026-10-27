@@ -53,6 +53,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- The parent POM builds the issueManagement section from this Jira project key -->
+    <xwiki.issueManagement.jira.id>ADVBOOK</xwiki.issueManagement.jira.id>
   </properties>
 
   <repositories>
