@@ -24,7 +24,7 @@
  * The tools are built without any form element, since the administration section displays them next to its own
  * form. Every text is inserted with textContent. The server checks all the rights again.
  */
-define('advanced-bookmarks-admin-messages', ['advanced-bookmarks-common'], function(common) {
+define('xwiki-advanced-bookmarks-admin-messages', ['xwiki-advanced-bookmarks-common'], function(common) {
   return {
     prefix: 'advancedbookmarks.',
     keys: [
@@ -48,7 +48,7 @@ define('advanced-bookmarks-admin-messages', ['advanced-bookmarks-common'], funct
     ].concat(common.errorKeys)
   };
 });
-require(['xwiki-meta', 'advanced-bookmarks-common', 'xwiki-l10n!advanced-bookmarks-admin-messages'],
+require(['xwiki-meta', 'xwiki-advanced-bookmarks-common', 'xwiki-l10n!xwiki-advanced-bookmarks-admin-messages'],
     function(xm, common, l10n) {
   'use strict';
 

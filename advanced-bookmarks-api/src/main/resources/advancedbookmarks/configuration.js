@@ -25,12 +25,12 @@
  * Security: page titles and references are inserted with textContent or as attribute values, never as HTML. The
  * server validates the saved references again.
  */
-define('advanced-bookmarks-configuration-messages', {
+define('xwiki-advanced-bookmarks-configuration-messages', {
   prefix: 'advancedbookmarks.admin.excludedPages.',
   keys: ['remove']
 });
 // The tree module returns jQuery with the tree plugin, like in the dialogs of XWiki.
-require(['xwiki-tree', 'xwiki-l10n!advanced-bookmarks-configuration-messages'], function($, l10n) {
+require(['xwiki-tree', 'xwiki-l10n!xwiki-advanced-bookmarks-configuration-messages'], function($, l10n) {
   'use strict';
 
   var DOCUMENT_NODE_PREFIX = 'document:';

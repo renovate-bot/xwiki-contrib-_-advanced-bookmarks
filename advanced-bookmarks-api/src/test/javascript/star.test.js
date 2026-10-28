@@ -33,7 +33,7 @@ describe('advanced-bookmarks star', () => {
     xwiki = installXWiki();
     modules = loadScripts(['common.js', 'star.js'], {
       'xwiki-meta': {form_token: FORM_TOKEN},
-      'xwiki-l10n!advanced-bookmarks-star-messages': createL10n()
+      'xwiki-l10n!xwiki-advanced-bookmarks-star-messages': createL10n()
     });
   });
 
@@ -61,8 +61,8 @@ describe('advanced-bookmarks star', () => {
   };
 
   it('declares its translation keys, including the error codes of the service', () => {
-    const messages = modules.get('advanced-bookmarks-star-messages');
-    const common = modules.get('advanced-bookmarks-common');
+    const messages = modules.get('xwiki-advanced-bookmarks-star-messages');
+    const common = modules.get('xwiki-advanced-bookmarks-common');
 
     expect(messages.prefix).toBe('advancedbookmarks.');
     expect(messages.keys).toEqual(['star.add', 'star.remove', 'star.added', 'star.removed'].concat(common.errorKeys));

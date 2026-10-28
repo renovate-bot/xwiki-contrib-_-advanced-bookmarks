@@ -21,7 +21,7 @@
  * Star of the page action bar: adds the current page to the bookmarks of the user, or removes it. The server decides
  * the new state and checks the rights; the button only displays what the server answered.
  */
-define('advanced-bookmarks-star-messages', ['advanced-bookmarks-common'], function(common) {
+define('xwiki-advanced-bookmarks-star-messages', ['xwiki-advanced-bookmarks-common'], function(common) {
   return {
     prefix: 'advancedbookmarks.',
     keys: [
@@ -32,7 +32,8 @@ define('advanced-bookmarks-star-messages', ['advanced-bookmarks-common'], functi
     ].concat(common.errorKeys)
   };
 });
-require(['advanced-bookmarks-common', 'xwiki-l10n!advanced-bookmarks-star-messages'], function(common, l10n) {
+require(['xwiki-advanced-bookmarks-common', 'xwiki-l10n!xwiki-advanced-bookmarks-star-messages'],
+    function(common, l10n) {
   'use strict';
 
   var ACTIVE_CLASS = 'advanced-bookmarks-star-active';

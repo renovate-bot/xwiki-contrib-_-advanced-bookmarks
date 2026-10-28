@@ -63,7 +63,7 @@ describe('advanced-bookmarks administration tools', () => {
     document.body.appendChild(container);
     modules = loadScripts(['common.js', 'admintools.js'], {
       'xwiki-meta': {form_token: 'csrf-token', wiki: wiki},
-      'xwiki-l10n!advanced-bookmarks-admin-messages': createL10n()
+      'xwiki-l10n!xwiki-advanced-bookmarks-admin-messages': createL10n()
     });
     await settle();
   };
@@ -106,10 +106,10 @@ describe('advanced-bookmarks administration tools', () => {
   it('declares its translation keys, including the error codes of the service', async () => {
     await load();
 
-    const messages = modules.get('advanced-bookmarks-admin-messages');
+    const messages = modules.get('xwiki-advanced-bookmarks-admin-messages');
     expect(messages.prefix).toBe('advancedbookmarks.');
     expect(messages.keys).toContain('admin.tools.importReplaceWarning');
-    expect(messages.keys).toEqual(expect.arrayContaining(modules.get('advanced-bookmarks-common').errorKeys));
+    expect(messages.keys).toEqual(expect.arrayContaining(modules.get('xwiki-advanced-bookmarks-common').errorKeys));
   });
 
   it('displays the tools, without status when no import was run', async () => {
@@ -127,7 +127,7 @@ describe('advanced-bookmarks administration tools', () => {
     it('downloads the export of the wiki', async () => {
       respond('exportWiki', createResponse(200, {content: '{"users":[]}', exported: 3, skipped: 1}));
       await load();
-      const common = modules.get('advanced-bookmarks-common');
+      const common = modules.get('xwiki-advanced-bookmarks-common');
       const downloadFile = jest.spyOn(common, 'downloadFile').mockImplementation(() => {});
       jest.spyOn(common, 'getDateForFileName').mockReturnValue('2026-10-12');
 
@@ -144,7 +144,7 @@ describe('advanced-bookmarks administration tools', () => {
     it('names the export file without the wiki when the page does not give it', async () => {
       respond('exportWiki', createResponse(200, {content: '{}', exported: 0, skipped: 0}));
       await load(undefined, null);
-      const common = modules.get('advanced-bookmarks-common');
+      const common = modules.get('xwiki-advanced-bookmarks-common');
       const downloadFile = jest.spyOn(common, 'downloadFile').mockImplementation(() => {});
       jest.spyOn(common, 'getDateForFileName').mockReturnValue('2026-10-12');
 

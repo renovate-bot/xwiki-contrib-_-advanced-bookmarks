@@ -23,7 +23,7 @@
  *
  * Security: texts are inserted with textContent or as attribute values, never as HTML.
  */
-define('advanced-bookmarks-common', ['xwiki-meta'], function(xm) {
+define('xwiki-advanced-bookmarks-common', ['xwiki-meta'], function(xm) {
   'use strict';
 
   var serviceReference = XWiki.Model.resolve('AdvancedBookmarks.Code.Service', XWiki.EntityType.DOCUMENT);

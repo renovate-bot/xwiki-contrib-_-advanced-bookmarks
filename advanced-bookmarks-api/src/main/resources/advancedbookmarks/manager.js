@@ -24,7 +24,7 @@
  * Security: every text coming from the server or the user is inserted with textContent or as an attribute value,
  * never as HTML. The server checks all the rights again.
  */
-define('advanced-bookmarks-manager-messages', ['advanced-bookmarks-common'], function(common) {
+define('xwiki-advanced-bookmarks-manager-messages', ['xwiki-advanced-bookmarks-common'], function(common) {
   return {
     prefix: 'advancedbookmarks.',
     keys: [
@@ -81,7 +81,7 @@ define('advanced-bookmarks-manager-messages', ['advanced-bookmarks-common'], fun
     ].concat(common.errorKeys)
   };
 });
-require(['jquery', 'advanced-bookmarks-common', 'xwiki-l10n!advanced-bookmarks-manager-messages'],
+require(['jquery', 'xwiki-advanced-bookmarks-common', 'xwiki-l10n!xwiki-advanced-bookmarks-manager-messages'],
     function($, common, l10n) {
   'use strict';
 

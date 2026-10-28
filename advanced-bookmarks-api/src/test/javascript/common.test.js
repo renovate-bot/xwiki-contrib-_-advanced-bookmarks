@@ -22,13 +22,13 @@ const {SERVICE_URL, installXWiki, createL10n, createResponse} = require('./xwiki
 
 const FORM_TOKEN = 'csrf-token';
 
-describe('advanced-bookmarks-common', () => {
+describe('xwiki-advanced-bookmarks-common', () => {
   let xwiki;
   let common;
   let l10n;
 
   const loadCommon = function() {
-    return loadScripts(['common.js'], {'xwiki-meta': {form_token: FORM_TOKEN}}).get('advanced-bookmarks-common');
+    return loadScripts(['common.js'], {'xwiki-meta': {form_token: FORM_TOKEN}}).get('xwiki-advanced-bookmarks-common');
   };
 
   // Returns the rejection error of a promise that must fail.
