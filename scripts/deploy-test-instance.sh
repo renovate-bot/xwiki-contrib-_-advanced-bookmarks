@@ -85,7 +85,7 @@ docker run --rm \
     }
     trap restore EXIT
     mvn -B -q versions:set -DnewVersion="$TEST_VERSION" -DgenerateBackupPoms=false
-    mvn -B deploy -DskipTests -Dskip.npm -Dskip.installnodenpm -Denforcer.skip -Dcheckstyle.skip \
+    mvn -B -ntp deploy -DskipTests -Dskip.npm -Dskip.installnodenpm -Denforcer.skip -Dcheckstyle.skip \
       -Drevapi.skip -Djacoco.skip -Dlicense.skip \
       -DaltDeploymentRepository=staging::file:///projet/target/staging
   '

@@ -146,7 +146,7 @@ Administrators can also keep a copy of the bookmarks of a whole wiki with the [a
 Build with JDK 17; the parent POM compiles the extension for Java 17 (`xwiki.java.version`), and XWiki releases of a 17.10-based extension must be made with that JDK. With a newer JDK, Mockito prints a warning that the XWiki test framework reports as a test failure. Build the extension and run its unit and component tests with Maven:
 
 ```bash
-mvn -B clean verify
+mvn -B -ntp clean verify
 ```
 
 Add `-Pquality` to also check the test coverage, as the XWiki continuous integration does.
@@ -156,7 +156,7 @@ The JavaScript resources of the API module have their own unit tests, written wi
 When Maven and Java are not installed locally, the same build can be run with Docker from the project root (mounting `~/.npm` keeps the npm packages between builds):
 
 ```bash
-docker run --rm -v "$PWD":/projet -v "$HOME/.m2":/root/.m2 -v "$HOME/.npm":/root/.npm -w /projet maven:3.9-eclipse-temurin-17 mvn -B clean verify
+docker run --rm -v "$PWD":/projet -v "$HOME/.m2":/root/.m2 -v "$HOME/.npm":/root/.npm -w /projet maven:3.9-eclipse-temurin-17 mvn -B -ntp clean verify
 ```
 
 On Windows, keep the project and these caches on the WSL file system: mounting Windows folders in the container makes the build several times slower.
@@ -166,7 +166,7 @@ On Windows, keep the project and these caches on the WSL file system: mounting W
 The functional tests (module `advanced-bookmarks-test`) start XWiki with Tomcat and PostgreSQL, and a browser, in Docker containers, using the XWiki Docker test framework. They require Docker and are only run with the `integration-tests` and `docker` profiles:
 
 ```bash
-mvn -B clean install -Pintegration-tests,docker
+mvn -B -ntp clean install -Pintegration-tests,docker
 ```
 
 The tested XWiki version is the platform version of the parent POM (17.10.2). The first run downloads several Docker images and takes a while.
@@ -178,7 +178,7 @@ P=$PWD; M=$HOME/.m2
 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
   -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
   -v "$P":"$P" -v "$M":"$M" -v "$HOME/.npm":/root/.npm -w "$P" maven:3.9-eclipse-temurin-17 \
-  sh -c "rm -f /.dockerenv && mvn -B -Dmaven.repo.local=$M/repository clean install -Pintegration-tests,docker"
+  sh -c "rm -f /.dockerenv && mvn -B -ntp -Dmaven.repo.local=$M/repository clean install -Pintegration-tests,docker"
 ```
 
 Or from Windows with Git Bash:
@@ -190,5 +190,5 @@ MSYS_NO_PATHCONV=1 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock 
   -v 'C:\path\to\advanced-bookmarks':/run/desktop/mnt/host/c/path/to/advanced-bookmarks \
   -v 'C:\Users\<user>\.m2':/run/desktop/mnt/host/c/Users/<user>/.m2 \
   -w /run/desktop/mnt/host/c/path/to/advanced-bookmarks maven:3.9-eclipse-temurin-17 \
-  sh -c "rm -f /.dockerenv && mvn -B -Dmaven.repo.local=$R clean install -Pintegration-tests,docker"
+  sh -c "rm -f /.dockerenv && mvn -B -ntp -Dmaven.repo.local=$R clean install -Pintegration-tests,docker"
 ```
