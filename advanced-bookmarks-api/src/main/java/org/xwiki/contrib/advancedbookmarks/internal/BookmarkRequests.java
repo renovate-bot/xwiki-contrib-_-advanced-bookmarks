@@ -47,7 +47,9 @@ import org.xwiki.csrf.CSRFToken;
 @Singleton
 public class BookmarkRequests
 {
-    /** The request parameter holding the CSRF token, as for the other XWiki forms. */
+    /**
+     * The request parameter holding the CSRF token, as for the other XWiki forms.
+     */
     public static final String TOKEN_PARAMETER = "form_token";
 
     @Inject

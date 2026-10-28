@@ -46,25 +46,39 @@ import org.xwiki.model.reference.LocalDocumentReference;
 @Singleton
 public class BookmarkConfiguration
 {
-    /** Number of bookmarks of the panel when the wiki does not configure it. */
+    /**
+     * Number of bookmarks of the panel when the wiki does not configure it.
+     */
     public static final int DEFAULT_PANEL_LIMIT = 10;
 
-    /** Highest panel limit an administrator may configure. */
+    /**
+     * Highest panel limit an administrator may configure.
+     */
     public static final int MAX_PANEL_LIMIT = 20;
 
-    /** Maximum number of excluded pages taken into account. */
+    /**
+     * Maximum number of excluded pages taken into account.
+     */
     public static final int MAX_EXCLUDED_PAGES = 100;
 
-    /** Name of the panel limit property. */
+    /**
+     * Name of the panel limit property.
+     */
     public static final String PANEL_LIMIT = "panelLimit";
 
-    /** Name of the property enabling the star. */
+    /**
+     * Name of the property enabling the star.
+     */
     public static final String STAR_ENABLED = "starEnabled";
 
-    /** Name of the excluded pages property. */
+    /**
+     * Name of the excluded pages property.
+     */
     public static final String EXCLUDED_PAGES = "excludedPages";
 
-    /** The pages of the extension itself are never bookmarked: they are tools, not content. */
+    /**
+     * The pages of the extension itself are never bookmarked: they are tools, not content.
+     */
     private static final String EXTENSION_SPACE = "AdvancedBookmarks";
 
     private static final LocalDocumentReference PANEL = new LocalDocumentReference("Panels", "MyBookmarks");

@@ -34,7 +34,9 @@ import org.xwiki.test.mockito.MockitoComponentManager;
  */
 public final class ReferenceStubs
 {
-    /** The current wiki of the tests. */
+    /**
+     * The current wiki of the tests.
+     */
     public static final String WIKI = "wiki";
 
     private ReferenceStubs()

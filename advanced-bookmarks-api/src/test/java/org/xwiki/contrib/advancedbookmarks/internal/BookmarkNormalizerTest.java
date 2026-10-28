@@ -50,7 +50,9 @@ class BookmarkNormalizerTest
 {
     private static final String WIKI = ReferenceStubs.WIKI;
 
-    /** A limit other than the default one, to check that the configured limit is applied. */
+    /**
+     * A limit other than the default one, to check that the configured limit is applied.
+     */
     private static final int PANEL_LIMIT = 3;
 
     @InjectMockComponents

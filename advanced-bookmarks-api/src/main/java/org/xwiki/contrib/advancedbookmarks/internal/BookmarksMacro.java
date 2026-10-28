@@ -61,17 +61,23 @@ import org.xwiki.wiki.user.WikiUserManagerException;
 @Singleton
 public class BookmarksMacro extends AbstractMacro<BookmarksMacroParameters>
 {
-    /** The request parameter used by administrators to manage the bookmarks of another user. */
+    /**
+     * The request parameter used by administrators to manage the bookmarks of another user.
+     */
     public static final String USER_PARAMETER = "user";
 
-    /** The class of the container filled by the JavaScript. */
+    /**
+     * The class of the container filled by the JavaScript.
+     */
     public static final String CONTAINER_CLASS = "advanced-bookmarks-manager";
 
     private static final String CLASS = "class";
 
     private static final String TRANSLATION_PREFIX = "advancedbookmarks.manager.";
 
-    /** The user picker of XWiki, offered to administrators. */
+    /**
+     * The user picker of XWiki, offered to administrators.
+     */
     private static final String USER_PICKER = "uicomponents/suggest/suggestUsersAndGroups.js";
 
     @Inject

@@ -52,7 +52,9 @@ import com.xpn.xwiki.doc.XWikiDocument;
 @Singleton
 public class BookmarkEventListener extends AbstractLocalEventListener
 {
-    /** The name of this listener. */
+    /**
+     * The name of this listener.
+     */
     public static final String NAME = "org.xwiki.contrib.advancedbookmarks.internal.BookmarkEventListener";
 
     @Inject

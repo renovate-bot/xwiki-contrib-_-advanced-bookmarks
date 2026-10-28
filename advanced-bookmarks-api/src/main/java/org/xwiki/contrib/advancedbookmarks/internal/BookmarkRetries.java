@@ -33,7 +33,9 @@ import org.xwiki.contrib.advancedbookmarks.BookmarkStoreConflictException;
  */
 public final class BookmarkRetries
 {
-    /** The number of attempts before a version conflict is reported to the caller. */
+    /**
+     * The number of attempts before a version conflict is reported to the caller.
+     */
     public static final int MAX_ATTEMPTS = 3;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BookmarkRetries.class);

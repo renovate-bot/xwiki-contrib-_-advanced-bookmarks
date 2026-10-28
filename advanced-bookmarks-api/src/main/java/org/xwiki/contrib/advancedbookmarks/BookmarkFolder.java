@@ -30,7 +30,9 @@ package org.xwiki.contrib.advancedbookmarks;
  */
 public class BookmarkFolder
 {
-    /** Identifier of the implicit root folder, which holds uncategorized bookmarks. */
+    /**
+     * Identifier of the implicit root folder, which holds uncategorized bookmarks.
+     */
     public static final String ROOT = "";
 
     private String id;

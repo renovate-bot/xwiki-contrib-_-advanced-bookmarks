@@ -42,7 +42,9 @@ import org.xwiki.model.reference.LocalDocumentReference;
 @Singleton
 public class BookmarkConfigurationSource extends AbstractDocumentConfigurationSource
 {
-    /** The hint of this configuration source. */
+    /**
+     * The hint of this configuration source.
+     */
     public static final String HINT = "advancedbookmarks";
 
     private static final List<String> CODE_SPACE = List.of("AdvancedBookmarks", "Code");
@@ -50,7 +52,9 @@ public class BookmarkConfigurationSource extends AbstractDocumentConfigurationSo
     private static final LocalDocumentReference CLASS_REFERENCE =
         new LocalDocumentReference(CODE_SPACE, "ConfigurationClass");
 
-    /** The configuration page, in each wiki. */
+    /**
+     * The configuration page, in each wiki.
+     */
     public static final LocalDocumentReference DOCUMENT_REFERENCE =
         new LocalDocumentReference(CODE_SPACE, "Configuration");
 

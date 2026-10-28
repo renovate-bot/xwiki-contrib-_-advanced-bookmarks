@@ -64,13 +64,19 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @Singleton
 public class BookmarkWikiTransfer
 {
-    /** Value of the {@code format} property, which identifies a wiki export file. */
+    /**
+     * Value of the {@code format} property, which identifies a wiki export file.
+     */
     public static final String FORMAT = "advanced-bookmarks-wiki";
 
-    /** Maximum size of a wiki export file, in bytes. Each user is also limited like the export of one user. */
+    /**
+     * Maximum size of a wiki export file, in bytes. Each user is also limited like the export of one user.
+     */
     public static final int MAX_FILE_BYTES = 33_554_432;
 
-    /** Maximum number of users in a wiki export file. */
+    /**
+     * Maximum number of users in a wiki export file.
+     */
     public static final int MAX_USERS = 10_000;
 
     private static final String USERS = "users";

@@ -52,10 +52,14 @@ import org.xwiki.model.reference.EntityReferenceSerializer;
 @Singleton
 public class BookmarkNormalizer
 {
-    /** Maximum length of a folder name. */
+    /**
+     * Maximum length of a folder name.
+     */
     public static final int MAX_FOLDER_NAME_LENGTH = 100;
 
-    /** Maximum length of a bookmark label. */
+    /**
+     * Maximum length of a bookmark label.
+     */
     public static final int MAX_LABEL_LENGTH = 200;
 
     private static final Pattern FOLDER_ID = Pattern.compile("^[A-Za-z0-9_-]{1,40}$");

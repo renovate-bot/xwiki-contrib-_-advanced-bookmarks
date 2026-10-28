@@ -83,7 +83,9 @@ public class SolrBookmarkStore implements BookmarkStore
 
     private static final String READ_OPERATION = "read";
 
-    /** The update parameter asking Solr to return the versions of the written documents, under {@link #ADDS}. */
+    /**
+     * The update parameter asking Solr to return the versions of the written documents, under {@link #ADDS}.
+     */
     private static final String VERSIONS_PARAMETER = "versions";
 
     private static final String ADDS = "adds";

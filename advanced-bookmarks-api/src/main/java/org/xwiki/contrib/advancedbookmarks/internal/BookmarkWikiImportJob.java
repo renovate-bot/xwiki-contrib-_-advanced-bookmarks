@@ -45,7 +45,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 @InstantiationStrategy(ComponentInstantiationStrategy.PER_LOOKUP)
 public class BookmarkWikiImportJob extends AbstractJob<BookmarkWikiImportRequest, BookmarkWikiImportStatus>
 {
-    /** The type of this job. */
+    /**
+     * The type of this job.
+     */
     public static final String JOB_TYPE = "advancedbookmarks.wikiImport";
 
     @Inject

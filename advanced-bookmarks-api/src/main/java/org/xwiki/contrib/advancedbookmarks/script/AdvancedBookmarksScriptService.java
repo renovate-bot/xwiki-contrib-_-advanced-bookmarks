@@ -61,7 +61,9 @@ import org.xwiki.script.service.ScriptServiceManager;
 @Singleton
 public class AdvancedBookmarksScriptService implements ScriptService
 {
-    /** The hint of this script service, which prefixes the hints of its sub-services. */
+    /**
+     * The hint of this script service, which prefixes the hints of its sub-services.
+     */
     public static final String ROLE_HINT = "advancedbookmarks";
 
     private static final String VERSION = "version";

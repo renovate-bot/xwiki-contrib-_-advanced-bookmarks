@@ -67,19 +67,29 @@ import org.xwiki.model.reference.EntityReferenceSerializer;
 @Singleton
 public class BookmarkTransfer
 {
-    /** Value of the {@code format} property, which identifies an export file. */
+    /**
+     * Value of the {@code format} property, which identifies an export file.
+     */
     public static final String FORMAT = "advanced-bookmarks";
 
-    /** Version of the export format, in the {@code formatVersion} property. */
+    /**
+     * Version of the export format, in the {@code formatVersion} property.
+     */
     public static final int FORMAT_VERSION = 1;
 
-    /** Version given to {@link #importData} to import into the current bookmarks, whatever their version. */
+    /**
+     * Version given to {@link #importData} to import into the current bookmarks, whatever their version.
+     */
     public static final long ANY_VERSION = -1;
 
-    /** Property of an export file holding the kind of file. */
+    /**
+     * Property of an export file holding the kind of file.
+     */
     public static final String FORMAT_KEY = "format";
 
-    /** Property of an export file holding the version of its format. */
+    /**
+     * Property of an export file holding the version of its format.
+     */
     public static final String FORMAT_VERSION_KEY = "formatVersion";
 
     @Inject

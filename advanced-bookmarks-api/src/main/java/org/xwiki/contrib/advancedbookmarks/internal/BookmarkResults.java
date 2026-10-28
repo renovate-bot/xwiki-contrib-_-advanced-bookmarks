@@ -46,10 +46,14 @@ import org.xwiki.contrib.advancedbookmarks.BookmarkTooLargeException;
 @Singleton
 public class BookmarkResults
 {
-    /** Key of the HTTP status code in every result. */
+    /**
+     * Key of the HTTP status code in every result.
+     */
     public static final String STATUS = "status";
 
-    /** Key of the error code in the result of a failed operation. */
+    /**
+     * Key of the error code in the result of a failed operation.
+     */
     public static final String ERROR = "error";
 
     private static final int OK = 200;

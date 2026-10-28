@@ -79,7 +79,9 @@ class DefaultBookmarkManagerTest
 
     private static final String PAGE_KEY = "wiki:Space.Page";
 
-    /** A limit other than the default one, to check that the configured limit is applied. */
+    /**
+     * A limit other than the default one, to check that the configured limit is applied.
+     */
     private static final int PANEL_LIMIT = 4;
 
     private static final String EMPTY_JSON = "{\"folders\":[],\"bookmarks\":[]}";

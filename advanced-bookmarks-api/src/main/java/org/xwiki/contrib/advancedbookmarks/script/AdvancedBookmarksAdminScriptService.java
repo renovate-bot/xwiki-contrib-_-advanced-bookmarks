@@ -50,7 +50,9 @@ import org.xwiki.script.service.ScriptService;
 @Singleton
 public class AdvancedBookmarksAdminScriptService implements ScriptService
 {
-    /** The name of the file part of an import request. */
+    /**
+     * The name of the file part of an import request.
+     */
     public static final String FILE_PART = "file";
 
     private static final String STATE = "state";

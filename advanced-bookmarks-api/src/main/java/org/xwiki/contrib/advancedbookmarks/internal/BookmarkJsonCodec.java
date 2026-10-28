@@ -58,10 +58,14 @@ public class BookmarkJsonCodec
      */
     public static final int MAX_JSON_BYTES = 32_766;
 
-    /** Maximum number of folders, and separately of bookmarks, of one user. */
+    /**
+     * Maximum number of folders, and separately of bookmarks, of one user.
+     */
     public static final int MAX_ITEMS = 10_000;
 
-    /** Maximum length of a serialized page reference. */
+    /**
+     * Maximum length of a serialized page reference.
+     */
     public static final int MAX_PAGE_REFERENCE_LENGTH = 512;
 
     private static final String FOLDERS = "folders";
