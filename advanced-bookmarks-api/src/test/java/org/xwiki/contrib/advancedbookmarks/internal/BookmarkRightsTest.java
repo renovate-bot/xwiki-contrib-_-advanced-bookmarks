@@ -19,7 +19,7 @@
  */
 package org.xwiki.contrib.advancedbookmarks.internal;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

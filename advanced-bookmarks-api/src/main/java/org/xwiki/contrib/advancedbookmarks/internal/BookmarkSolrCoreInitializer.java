@@ -19,8 +19,8 @@
  */
 package org.xwiki.contrib.advancedbookmarks.internal;
 
-import javax.inject.Named;
-import javax.inject.Singleton;
+import jakarta.inject.Named;
+import jakarta.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.search.solr.AbstractSolrCoreInitializer;
