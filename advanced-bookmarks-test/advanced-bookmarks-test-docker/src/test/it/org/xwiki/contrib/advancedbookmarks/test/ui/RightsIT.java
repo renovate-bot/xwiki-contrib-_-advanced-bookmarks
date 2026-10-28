@@ -21,6 +21,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
@@ -52,6 +53,7 @@ class RightsIT
     private static final By PROFILE_TAB = By.cssSelector("a[href='?category=bookmarks']");
 
     @Test
+    @Order(1)
     void accessRules(TestUtils setup)
     {
         DocumentReference page = new DocumentReference(setup.getCurrentWiki(), "RightsIT", "Page");

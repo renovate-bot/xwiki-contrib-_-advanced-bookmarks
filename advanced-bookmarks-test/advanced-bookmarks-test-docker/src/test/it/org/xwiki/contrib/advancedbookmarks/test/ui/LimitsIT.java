@@ -21,6 +21,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 
 import java.nio.charset.StandardCharsets;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarksManager;
@@ -45,6 +46,7 @@ class LimitsIT
     private static final String TOO_LARGE = "tooLarge";
 
     @Test
+    @Order(1)
     void saveBookmarksUpToTheMaximumSize(TestUtils setup)
     {
         // The test instance has no default content: create the page displayed while calling the service.

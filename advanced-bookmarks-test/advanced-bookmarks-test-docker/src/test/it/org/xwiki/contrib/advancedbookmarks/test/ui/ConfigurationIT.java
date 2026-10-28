@@ -22,6 +22,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkStar;
@@ -54,6 +55,7 @@ class ConfigurationIT
     }
 
     @Test
+    @Order(1)
     void configureStarExclusionsAndPanel(TestUtils setup)
     {
         String wiki = setup.getCurrentWiki();

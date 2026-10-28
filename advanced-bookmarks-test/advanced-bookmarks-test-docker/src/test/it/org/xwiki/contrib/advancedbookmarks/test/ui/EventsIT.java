@@ -21,6 +21,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.model.reference.DocumentReference;
@@ -41,6 +42,7 @@ class EventsIT
     private static final String SPACE = "EventsIT";
 
     @Test
+    @Order(1)
     void renameAndDeletePage(TestUtils setup)
     {
         String wiki = setup.getCurrentWiki();
@@ -71,6 +73,7 @@ class EventsIT
     }
 
     @Test
+    @Order(2)
     void deleteUser(TestUtils setup)
     {
         String user = "EventsDeletedUser";
@@ -85,6 +88,7 @@ class EventsIT
     }
 
     @Test
+    @Order(3)
     void renameUser(TestUtils setup)
     {
         // Decided behavior: XWiki handles the rename of a user page as the deletion of the old user, whose bookmarks

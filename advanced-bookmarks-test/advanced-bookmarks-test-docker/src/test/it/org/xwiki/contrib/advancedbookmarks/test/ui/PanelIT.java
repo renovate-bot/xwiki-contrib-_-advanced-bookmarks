@@ -21,6 +21,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarksManager;
@@ -44,6 +45,7 @@ class PanelIT
     private static final String PASSWORD = "PanelPassword";
 
     @Test
+    @Order(1)
     void listBookmarksAndDeletedPages(TestUtils setup)
     {
         DocumentReference first = new DocumentReference(setup.getCurrentWiki(), "PanelIT", "First");

@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarksManager;
@@ -45,6 +46,7 @@ class ManagerIT
     private static final String FOLDER = "Work";
 
     @Test
+    @Order(1)
     void organizeBookmarks(TestUtils setup)
     {
         DocumentReference first = new DocumentReference(setup.getCurrentWiki(), "ManagerIT", "First");

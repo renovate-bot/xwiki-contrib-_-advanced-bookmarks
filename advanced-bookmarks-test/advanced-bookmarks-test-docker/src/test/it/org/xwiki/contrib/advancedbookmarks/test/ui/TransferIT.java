@@ -21,6 +21,7 @@ package org.xwiki.contrib.advancedbookmarks.test.ui;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.model.reference.DocumentReference;
@@ -51,6 +52,7 @@ class TransferIT
     private static final String REPLACE = "replace";
 
     @Test
+    @Order(1)
     void exportAndImport(TestUtils setup)
     {
         String wiki = setup.getCurrentWiki();

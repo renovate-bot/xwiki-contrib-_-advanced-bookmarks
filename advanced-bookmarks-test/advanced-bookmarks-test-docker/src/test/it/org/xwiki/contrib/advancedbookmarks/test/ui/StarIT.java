@@ -19,6 +19,7 @@
  */
 package org.xwiki.contrib.advancedbookmarks.test.ui;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkStar;
 import org.xwiki.test.docker.junit5.TestReference;
@@ -37,6 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class StarIT
 {
     @Test
+    @Order(1)
     void toggleBookmark(TestUtils setup, TestReference testReference)
     {
         setup.createUserAndLogin("StarUser", "StarPassword");
