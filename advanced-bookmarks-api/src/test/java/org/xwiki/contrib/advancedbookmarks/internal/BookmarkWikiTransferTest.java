@@ -117,7 +117,7 @@ class BookmarkWikiTransferTest
         assertEquals(2, export.skipped());
         assertEquals("The bookmarks of [wiki:XWiki.gone] were not exported: it is not an existing user.",
             this.logCapture.getMessage(0));
-        assertEquals("The bookmarks of [wiki:XWiki.broken] were not exported: corrupted",
+        assertEquals("The bookmarks of [wiki:XWiki.broken] were not exported: BookmarkStoreException: corrupted",
             this.logCapture.getMessage(1));
 
         // The export can be imported again.

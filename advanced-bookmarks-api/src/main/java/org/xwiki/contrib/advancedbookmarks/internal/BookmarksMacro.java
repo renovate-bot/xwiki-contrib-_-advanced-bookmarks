@@ -28,6 +28,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.contrib.advancedbookmarks.BookmarkInvalidDataException;
@@ -194,7 +195,7 @@ public class BookmarksMacro extends AbstractMacro<BookmarksMacroParameters>
         try {
             return this.wikiUserManager.getUserScope(this.rights.getCurrentWiki()).name();
         } catch (WikiUserManagerException e) {
-            this.logger.warn("Unable to read the user scope of the wiki: {}", e.getMessage());
+            this.logger.warn("Unable to read the user scope of the wiki: {}", ExceptionUtils.getRootCauseMessage(e));
             return null;
         }
     }

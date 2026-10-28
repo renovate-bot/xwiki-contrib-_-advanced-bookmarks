@@ -100,7 +100,7 @@ class BookmarkPagesTest
         when(this.xwiki.exists(PAGE, this.xcontext)).thenThrow(new XWikiException());
 
         assertTrue(this.pages.exists(PAGE));
-        assertEquals("Unable to check whether a bookmarked page exists: Error number 0 in 0",
+        assertEquals("Unable to check whether a bookmarked page exists: XWikiException: Error number 0 in 0",
             this.logCapture.getMessage(0));
     }
 
@@ -158,7 +158,7 @@ class BookmarkPagesTest
         when(this.xwiki.getDocument(PAGE, this.xcontext)).thenThrow(new XWikiException());
 
         assertEquals("", this.pages.getPlainTitle(PAGE));
-        assertEquals("Unable to compute the title of a bookmarked page: Error number 0 in 0",
+        assertEquals("Unable to compute the title of a bookmarked page: XWikiException: Error number 0 in 0",
             this.logCapture.getMessage(0));
     }
 }

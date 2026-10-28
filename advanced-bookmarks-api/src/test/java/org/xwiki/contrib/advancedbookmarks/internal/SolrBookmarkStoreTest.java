@@ -449,7 +449,7 @@ class SolrBookmarkStoreTest
 
         capturedWrites(3);
         assertEquals("Unable to update the bookmarks of [xwiki:XWiki.User] after a page rename: "
-            + "The bookmark document was modified concurrently.", this.logCapture.getMessage(0));
+            + "SolrException: version conflict", this.logCapture.getMessage(0));
     }
 
     @Test
@@ -473,7 +473,7 @@ class SolrBookmarkStoreTest
         assertEquals(NEW_JSON, lastSaved.getFieldValue(SolrBookmarkStore.DATA_FIELD));
         assertEquals(0, exception.getSuppressed().length);
         assertEquals("Unable to update the bookmarks of [xwiki:XWiki.User] after a page rename: "
-            + "The bookmark document was modified concurrently.", this.logCapture.getMessage(0));
+            + "SolrException: version conflict", this.logCapture.getMessage(0));
     }
 
     @Test
@@ -489,10 +489,10 @@ class SolrBookmarkStoreTest
 
         assertEquals(1, exception.getSuppressed().length);
         verify(this.client, never()).request(any(SolrRequest.class), any());
-        assertEquals("Unable to update the bookmarks of [xwiki:XWiki.User] after a page rename: "
-            + "The bookmark document is invalid.", this.logCapture.getMessage(0));
-        assertEquals("Unable to update the bookmarks of [xwiki:XWiki.Zoe] after a page rename: "
-            + "The bookmark document is invalid.", this.logCapture.getMessage(1));
+        assertTrue(this.logCapture.getMessage(0).startsWith(
+            "Unable to update the bookmarks of [xwiki:XWiki.User] after a page rename: JsonEOFException: "));
+        assertTrue(this.logCapture.getMessage(1).startsWith(
+            "Unable to update the bookmarks of [xwiki:XWiki.Zoe] after a page rename: JsonEOFException: "));
     }
 
     @Test

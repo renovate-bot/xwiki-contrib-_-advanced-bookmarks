@@ -151,9 +151,9 @@ class BookmarkWikiImportJobTest
 
         assertEquals("Skipped the bookmarks of [wiki:XWiki.bob]: not a user of this wiki.",
             this.logCapture.getMessage(0));
-        assertEquals("Unable to import the bookmarks of [wiki:XWiki.dave]: The bookmark document was modified "
-            + "concurrently.", this.logCapture.getMessage(1));
-        assertEquals("Unable to import the bookmarks of [wiki:XWiki.eve]: storage down",
+        assertEquals("Unable to import the bookmarks of [wiki:XWiki.dave]: "
+            + "BookmarkStoreConflictException: The bookmark document was modified concurrently.", this.logCapture.getMessage(1));
+        assertEquals("Unable to import the bookmarks of [wiki:XWiki.eve]: BookmarkStoreException: storage down",
             this.logCapture.getMessage(2));
     }
 

@@ -30,6 +30,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.contrib.advancedbookmarks.BookmarkAccessDeniedException;
@@ -167,7 +168,8 @@ public class BookmarkWikiTransfer
             } catch (BookmarkStoreException e) {
                 // One corrupted document must not prevent the export of all the others.
                 skipped++;
-                this.logger.warn("The bookmarks of [{}] were not exported: {}", storedUser, e.getMessage());
+                this.logger.warn("The bookmarks of [{}] were not exported: {}",
+                    storedUser, ExceptionUtils.getRootCauseMessage(e));
                 this.logger.debug("Full error:", e);
             }
         }

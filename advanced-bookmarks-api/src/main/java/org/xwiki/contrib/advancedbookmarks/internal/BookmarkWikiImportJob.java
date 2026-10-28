@@ -22,6 +22,7 @@ package org.xwiki.contrib.advancedbookmarks.internal;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.annotation.InstantiationStrategy;
 import org.xwiki.component.descriptor.ComponentInstantiationStrategy;
@@ -106,7 +107,8 @@ public class BookmarkWikiImportJob extends AbstractJob<BookmarkWikiImportRequest
 
     private void fail(DocumentReference user, BookmarkException exception)
     {
-        this.logger.warn("Unable to import the bookmarks of [{}]: {}", user, exception.getMessage());
+        this.logger.warn("Unable to import the bookmarks of [{}]: {}",
+            user, ExceptionUtils.getRootCauseMessage(exception));
         this.logger.debug("Full error:", exception);
         this.status.addFailedUser();
     }

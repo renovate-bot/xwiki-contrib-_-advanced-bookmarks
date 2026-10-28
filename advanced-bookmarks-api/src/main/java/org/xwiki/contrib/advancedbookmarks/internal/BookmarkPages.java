@@ -23,6 +23,7 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.model.EntityType;
@@ -85,7 +86,8 @@ public class BookmarkPages
             return xcontext.getWiki().exists(page, xcontext);
         } catch (XWikiException e) {
             // Better display the bookmark normally than wrongly display it as deleted.
-            this.logger.warn("Unable to check whether a bookmarked page exists: {}", e.getMessage());
+            this.logger.warn("Unable to check whether a bookmarked page exists: {}",
+                ExceptionUtils.getRootCauseMessage(e));
             return true;
         }
     }
@@ -122,7 +124,8 @@ public class BookmarkPages
             return xwiki.getDocument(page, xcontext).getRenderedTitle(Syntax.PLAIN_1_0, xcontext);
         } catch (XWikiException e) {
             // The title is only a default label: its absence is not an error for the user.
-            this.logger.warn("Unable to compute the title of a bookmarked page: {}", e.getMessage());
+            this.logger.warn("Unable to compute the title of a bookmarked page: {}",
+                ExceptionUtils.getRootCauseMessage(e));
             return "";
         }
     }

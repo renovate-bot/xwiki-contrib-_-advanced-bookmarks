@@ -23,6 +23,7 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.model.reference.DocumentReference;
@@ -135,7 +136,8 @@ public class BookmarkRights
         try {
             return BookmarkUsers.isUserDocument(xcontext.getWiki().getDocument(user, xcontext));
         } catch (XWikiException e) {
-            this.logger.warn("Unable to check whether a bookmark owner is a user: {}", e.getMessage());
+            this.logger.warn("Unable to check whether a bookmark owner is a user: {}",
+                ExceptionUtils.getRootCauseMessage(e));
             this.logger.debug("Full error:", e);
             return false;
         }

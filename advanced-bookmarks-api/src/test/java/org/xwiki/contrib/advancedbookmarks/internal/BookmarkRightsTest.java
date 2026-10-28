@@ -180,7 +180,7 @@ class BookmarkRightsTest
         when(this.xwiki.getDocument(BOB, this.xcontext)).thenThrow(new XWikiException());
 
         assertFalse(this.rights.canManage(BOB));
-        assertEquals("Unable to check whether a bookmark owner is a user: Error number 0 in 0",
+        assertEquals("Unable to check whether a bookmark owner is a user: XWikiException: Error number 0 in 0",
             this.logCapture.getMessage(0));
     }
 

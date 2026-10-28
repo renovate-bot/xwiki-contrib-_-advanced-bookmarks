@@ -204,7 +204,7 @@ class BookmarksMacroTest
 
         assertEquals(Map.of(CLASS, CONTAINER, USER, "wiki:XWiki.alice", PANEL_LIMIT, "15", ADMIN, "true"),
             blocks.get(0).getParameters());
-        assertEquals("Unable to read the user scope of the wiki: failure", this.logCapture.getMessage(0));
+        assertEquals("Unable to read the user scope of the wiki: WikiUserManagerException: failure", this.logCapture.getMessage(0));
     }
 
     @Test

@@ -28,6 +28,7 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -231,7 +232,7 @@ public class SolrBookmarkStore implements BookmarkStore
             } catch (BookmarkStoreException e) {
                 // One user whose bookmarks cannot be updated must not prevent the update of the others.
                 this.logger.warn("Unable to update the bookmarks of [{}] after a page rename: {}", user,
-                    e.getMessage());
+                    ExceptionUtils.getRootCauseMessage(e));
                 failure = addFailure(failure, e);
             }
         }
