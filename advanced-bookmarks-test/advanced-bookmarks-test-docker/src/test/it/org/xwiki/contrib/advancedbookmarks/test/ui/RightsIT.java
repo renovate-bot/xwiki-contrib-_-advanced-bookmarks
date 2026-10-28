@@ -23,9 +23,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarkService;
 import org.xwiki.contrib.advancedbookmarks.test.po.BookmarksManager;
+import org.xwiki.contrib.advancedbookmarks.test.po.BookmarksProfileTab;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.test.docker.junit5.UITest;
 import org.xwiki.test.ui.TestUtils;
@@ -48,9 +48,6 @@ class RightsIT
     private static final String OWNER_PASSWORD = "RightsOwnerPassword";
 
     private static final String OTHER = "RightsOther";
-
-    // The exact link of the profile menu: other links of the page may carry the category of the current URL.
-    private static final By PROFILE_TAB = By.cssSelector("a[href='?category=bookmarks']");
 
     @Test
     @Order(1)
@@ -78,7 +75,7 @@ class RightsIT
         assertEquals(403, hiddenAdded.status());
         assertEquals("forbidden", hiddenAdded.get("error"));
         setup.gotoPage("XWiki", OWNER, "view", "category=bookmarks");
-        assertFalse(setup.getDriver().findElementsWithoutWaiting(PROFILE_TAB).isEmpty());
+        assertTrue(new BookmarksProfileTab().isDisplayed());
         assertEquals(owner, new BookmarksManager().waitUntilLoaded().getUser());
 
         // Another user can neither read nor change them.
@@ -95,7 +92,7 @@ class RightsIT
         assertFalse(manager.isDisplayed());
         assertTrue(manager.hasErrorMessage());
         setup.gotoPage("XWiki", OWNER);
-        assertTrue(setup.getDriver().findElementsWithoutWaiting(PROFILE_TAB).isEmpty());
+        assertFalse(new BookmarksProfileTab().isDisplayed());
 
         // The refused write changed nothing.
         setup.login(OWNER, OWNER_PASSWORD);
@@ -112,6 +109,6 @@ class RightsIT
         setup.gotoPage("AdvancedBookmarks", "WebHome", "view", "user=" + OWNER);
         assertEquals(owner, new BookmarksManager().waitUntilLoaded().getUser());
         setup.gotoPage("XWiki", OWNER);
-        assertFalse(setup.getDriver().findElementsWithoutWaiting(PROFILE_TAB).isEmpty());
+        assertTrue(new BookmarksProfileTab().isDisplayed());
     }
 }

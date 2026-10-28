@@ -75,8 +75,7 @@ class ManagerIT
         manager.togglePanel(secondPage);
 
         // The changes are saved automatically: wait until the server has them all.
-        setup.getDriver().waitUntilCondition(driver -> {
-            BookmarkService.Response bookmarks = service.getBookmarks("");
+        service.waitUntilBookmarks(bookmarks -> {
             String folderId = bookmarks.getFolderList().stream().filter(folder -> FOLDER.equals(folder.get("name")))
                 .map(folder -> (String) folder.get("id")).findFirst().orElse(null);
             Map<String, Object> firstBookmark = find(bookmarks, firstPage);

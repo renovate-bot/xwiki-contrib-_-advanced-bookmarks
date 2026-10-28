@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.test.ui.TestUtils;
@@ -182,6 +183,28 @@ public class BookmarkService extends BaseElement
     public Response getWikiImportStatus()
     {
         return get(parameters("wikiImportStatus"));
+    }
+
+    /**
+     * Waits until the bookmarks of the current user satisfy a condition, for instance because the page that changes
+     * them saves automatically.
+     *
+     * @param condition the condition on the {@code getBookmarks} response
+     */
+    public void waitUntilBookmarks(Predicate<Response> condition)
+    {
+        getDriver().waitUntilCondition(driver -> condition.test(getBookmarks("")));
+    }
+
+    /**
+     * Waits until the last wiki import is finished.
+     *
+     * @return the response, with the {@code state} of the import and its counters
+     */
+    public Response waitUntilWikiImportFinished()
+    {
+        getDriver().waitUntilCondition(driver -> "finished".equals(getWikiImportStatus().get("state")));
+        return getWikiImportStatus();
     }
 
     private Response get(Map<String, String> parameters)
