@@ -204,10 +204,11 @@
         </executions>
       </plugin>
       <!-- Unit tests of the JavaScript resources, with Jest (see package.json). The plugin downloads Node.js, so the
-           build needs no Node.js installation; the archive is cached in the local Maven repository. Node.js is installed
-           outside target/ so that "clean" keeps it: the plugin skips the installation when the version is already there,
-           and extracting its many files is slow on some file systems (a Windows folder mounted in Docker). The tests
-           follow -DskipTests like the Java tests, and a failed test or a coverage below the threshold fails the build.
+           build needs no Node.js installation; the archive is cached in the local Maven repository. Node.js is
+           installed outside target/ so that "clean" keeps it: the plugin skips the installation when the version is
+           already there, and extracting its many files is slow on some file systems (a Windows folder mounted in
+           Docker). The tests follow -DskipTests like the Java tests, and a failed test or a coverage below the
+           threshold fails the build.
       -->
       <plugin>
         <groupId>com.github.eirslett</groupId>
