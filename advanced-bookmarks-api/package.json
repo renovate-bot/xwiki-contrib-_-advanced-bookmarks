@@ -1,5 +1,6 @@
 {
   "name": "advanced-bookmarks-api",
+  "version": "0.0.0",
   "private": true,
   "description": "Unit tests of the JavaScript of Advanced Bookmarks, run by Maven through the frontend-maven-plugin.",
   "license": "LGPL-2.1",
