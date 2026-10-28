@@ -13,7 +13,7 @@ Advanced Bookmarks is an XWiki extension for managing personal bookmarks in fold
 * Sonar Dashboard: [![Status](https://sonarcloud.io/api/project_badges/measure?project=org.xwiki.contrib.advancedbookmarks:advanced-bookmarks&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.xwiki.contrib.advancedbookmarks:advanced-bookmarks)
 * Continuous Integration Status: [![Build Status](https://ci.xwiki.org/job/XWiki%20Contrib/job/advanced-bookmarks/job/master/badge/icon)](https://ci.xwiki.org/job/XWiki%20Contrib/job/advanced-bookmarks/job/master/)
 
-The user and administrator documentation, published on extensions.xwiki.org, is kept in [docs/extensions.xwiki.org.xwiki](docs/extensions.xwiki.org.xwiki) (XWiki 2.1 syntax). This README is aimed at developers and administrators.
+The user, administrator and developer documentation, published on www.xwiki.org under `documentation/extensions/{user,admin,dev}/advanced-bookmarks`, is kept in [docs/documentation/pages.py](docs/documentation/pages.py) (the page set read by the `docpages.py` tool of [xwiki-dev-llm](https://github.com/xwiki/xwiki-dev-llm)), with its screenshots in [docs/documentation/shots/](docs/documentation/shots/). This README is aimed at developers and administrators.
 
 ## Installation
 

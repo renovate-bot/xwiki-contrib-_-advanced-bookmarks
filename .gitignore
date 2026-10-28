@@ -76,3 +76,6 @@ CLAUDE.md
 claude.md
 Advanced_Bookmarks_passation.md
 favoris-2.0.0.zip
+
+# Python bytecode of the documentation tooling
+__pycache__/
