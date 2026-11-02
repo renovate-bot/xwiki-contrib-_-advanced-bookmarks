@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.xwiki.contrib.advancedbookmarks</groupId>
     <artifactId>advanced-bookmarks</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>advanced-bookmarks-api</artifactId>

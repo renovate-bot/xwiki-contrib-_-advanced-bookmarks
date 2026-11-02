@@ -30,7 +30,7 @@
 
   <groupId>org.xwiki.contrib.advancedbookmarks</groupId>
   <artifactId>advanced-bookmarks</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Advanced Bookmarks - Parent POM</name>
   <description>User bookmark management for XWiki: folders, a star on each page and a panel.</description>
   <packaging>pom</packaging>
@@ -46,7 +46,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/advanced-bookmarks.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/advanced-bookmarks.git</developerConnection>
     <url>https://github.com/xwiki-contrib/advanced-bookmarks</url>
-    <tag>advanced-bookmarks-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
