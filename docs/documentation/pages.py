@@ -51,6 +51,7 @@ ALL = [
 * [[Organize Your Bookmarks in Folders>>doc:@USER@.organize-folders.WebHome]] and subfolders.
 * [[Select the Bookmarks of the Panel>>doc:@USER@.select-panel.WebHome]] to reach them from every page.
 * [[Export Your Bookmarks>>doc:@USER@.export.WebHome]] to a file, and [[Import Bookmarks from a File>>doc:@USER@.import-file.WebHome]].
+* Display your bookmarks in any page with the [[Bookmarks Macro>>doc:@USER@.bookmarks-macro.WebHome]].
 """, faq="""
 == What happens to a bookmark when its page is renamed or deleted? ==
 
@@ -88,7 +89,7 @@ Open the "Bookmarks" tab of your user profile, which displays the same page. You
 
 == Can I display my bookmarks in another page? ==
 
-Yes, insert the ##bookmarks## macro in the page.
+Yes, insert the [[Bookmarks Macro>>doc:@USER@.bookmarks-macro.WebHome]] in the page.
 """, attachments=['panel-view-all.png', 'bookmarks-page.png']),
 
     page(USER, 'add-page', 'Add a Page to Your Bookmarks', 'howto', 'user', """
@@ -198,6 +199,33 @@ When adding, a folder of the file is merged with the folder of the same name at 
 
 No. Export your bookmarks first if you may need them again.
 """, attachments=['import-button.png', 'import-options.png', 'import-done.png']),
+
+    page(USER, 'bookmarks-macro', 'Bookmarks Macro', 'reference', 'user', """
+The ##bookmarks## macro displays a [[bookmarks page>>doc:@USER@.open.WebHome]] in any wiki page, where the reader manages their [[folders>>doc:@USER@.organize-folders.WebHome]] and [[Panel selection>>doc:@USER@.select-panel.WebHome]]. It is in the "Navigation" category of the macros, and must stand on its own line.
+
+{{code language="none"}}
+{{bookmarks/}}
+{{/code}}
+
+== Parameters ==
+
+|=Parameter |=Default |=What it does
+|##user## |The current user |Displays the bookmarks of this user, such as ##XWiki.jdoe##, instead of those of the reader.
+
+== Display ==
+
+|=Reader |=What the macro displays
+|Not logged in |"Log in to manage your bookmarks."
+|The user whose bookmarks are displayed |Their bookmarks.
+|An administrator of the wiki |The bookmarks, under "You are managing the bookmarks of <user>." when they belong to someone else.
+|Anyone else |"You are not allowed to view this list."
+""", faq="""
+== Why does an administrator see "You are not allowed to view this list."? ==
+
+To display the bookmarks of another user, the page holding the macro must also be saved by an administrator of the wiki, as explained in [[Advanced Bookmarks Storage and Privacy>>doc:@ADMIN@.storage-privacy.WebHome]].
+""", related="""
+* [[Manage the Bookmarks of Another User>>doc:@ADMIN@.manage-another-user.WebHome]]
+"""),
 
     # -------------------------------------------------------- Administrators
     page(ADMIN, None, 'Advanced Bookmarks', 'explanation', 'administrator', """
@@ -568,7 +596,8 @@ A wiki export, with the same folders and bookmarks for each user:
 SHOTS = 'shots'
 
 PIN = {
-    USER + '.WebHome': ['open', 'add-page', 'organize-folders', 'select-panel', 'export', 'import-file'],
+    USER + '.WebHome': ['open', 'add-page', 'organize-folders', 'select-panel', 'export', 'import-file',
+                        'bookmarks-macro'],
     ADMIN + '.WebHome': ['install', 'settings', 'manage-another-user', 'export-wiki', 'import-wiki', 'back-up',
                          'limits', 'storage-privacy'],
     DEV + '.WebHome': ['script-services', 'http-service', 'export-file-format'],
