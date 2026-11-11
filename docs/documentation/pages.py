@@ -73,11 +73,11 @@ No, each wiki keeps its own bookmarks.
 * [[Advanced Bookmarks (for Developers)>>doc:@DEV@.WebHome]]
 """),
 
-    page(USER, 'open', 'Open Your Bookmarks', 'howto', 'user', """
+    page(USER, 'open', 'See all Bookmarks', 'howto', 'user', """
 Open the page listing all your [[bookmarks>>doc:@USER@.WebHome]], where you organize them.
 
 1. In the "My bookmarks" Panel, click "View all my bookmarks".(((
-{{image reference="panel-view-all.png" size="medium" alt="View all my bookmarks link of the My bookmarks panel"/}}
+{{image reference="panel-view.png" size="medium" alt="View all my bookmarks link of the My bookmarks panel"/}}
 )))
 1. Your folders and bookmarks are displayed:(((
 {{image reference="bookmarks-page.png" size="extra" alt="Bookmarks page listing folders and bookmarks"/}}
@@ -90,9 +90,9 @@ Open the "Bookmarks" tab of your user profile, which displays the same page. You
 == Can I display my bookmarks in another page? ==
 
 Yes, insert the [[Bookmarks Macro>>doc:@USER@.bookmarks-macro.WebHome]] in the page.
-""", attachments=['panel-view-all.png', 'bookmarks-page.png']),
+""", attachments=['panel-view.png', 'bookmarks-page.png']),
 
-    page(USER, 'add-page', 'Add a Page to Your Bookmarks', 'howto', 'user', """
+    page(USER, 'add-page', 'Add a Page to Bookmarks', 'howto', 'user', """
 Add the current page to your [[bookmarks>>doc:@USER@.WebHome]] in one click.
 
 1. Open the page to bookmark.
@@ -108,7 +108,7 @@ Add the current page to your [[bookmarks>>doc:@USER@.WebHome]] in one click.
 Click its filled star again, or remove it from [[your bookmarks page>>doc:@USER@.open.WebHome]].
 """, attachments=['star-button.png', 'star-added.png']),
 
-    page(USER, 'organize-folders', 'Organize Your Bookmarks in Folders', 'howto', 'user', """
+    page(USER, 'organize-folders', 'Group Bookmarks in Folders', 'howto', 'user', """
 Group your [[bookmarks>>doc:@USER@.WebHome]] in folders, in the order you choose. Changes are saved automatically.
 
 1. [[Open your bookmarks>>doc:@USER@.open.WebHome]].
@@ -119,10 +119,10 @@ Group your [[bookmarks>>doc:@USER@.WebHome]] in folders, in the order you choose
 {{image reference="folder-name-field.png" size="large" alt="Name field of the new folder"/}}
 )))
 1. Choose the folder in the "Move to…" list of a bookmark, or drag the bookmark onto the folder.(((
-{{image reference="move-to-list.png" size="large" alt="Move to list of a bookmark"/}}
+{{image reference="move-list.png" size="large" alt="Move to list of a bookmark"/}}
 )))
 1. The bookmark is in the folder:(((
-{{image reference="bookmark-in-folder.png" size="large" alt="Folder holding the moved bookmark"/}}
+{{image reference="bookmark-folder.png" size="large" alt="Folder holding the moved bookmark"/}}
 )))
 """, faq="""
 == How do I create a subfolder? ==
@@ -140,10 +140,10 @@ Yes, click "Rename" on the bookmark. Leave the name empty to display the page re
 == What happens to the bookmarks of a deleted folder? ==
 
 They are moved to "Uncategorized".
-""", attachments=['new-folder-button.png', 'folder-name-field.png', 'move-to-list.png',
-                  'bookmark-in-folder.png']),
+""", attachments=['new-folder-button.png', 'folder-name-field.png', 'move-list.png',
+                  'bookmark-folder.png']),
 
-    page(USER, 'select-panel', 'Select the Bookmarks of the Panel', 'howto', 'user', """
+    page(USER, 'select-panel', 'Organize the Bookmarks Panel', 'howto', 'user', """
 Choose the [[bookmarks>>doc:@USER@.WebHome]] that the "My bookmarks" Panel displays on every page. Without any selection, the Panel displays your first bookmarks.
 
 1. [[Open your bookmarks>>doc:@USER@.open.WebHome]].
@@ -159,7 +159,7 @@ Choose the [[bookmarks>>doc:@USER@.WebHome]] that the "My bookmarks" Panel displ
 Up to the limit set by your administrator. The counter above your bookmarks shows it.
 """, attachments=['panel-checkbox.png', 'panel-selection.png']),
 
-    page(USER, 'export', 'Export Your Bookmarks', 'howto', 'user', """
+    page(USER, 'export', 'Export your Bookmarks', 'howto', 'user', """
 Save your [[bookmarks>>doc:@USER@.WebHome]] to a file, to keep a copy or to [[import it>>doc:@USER@.import-file.WebHome]] into another wiki.
 
 1. [[Open your bookmarks>>doc:@USER@.open.WebHome]].
@@ -173,7 +173,7 @@ Save your [[bookmarks>>doc:@USER@.WebHome]] to a file, to keep a copy or to [[im
 )))
 """, attachments=['export-button.png']),
 
-    page(USER, 'import-file', 'Import Bookmarks from a File', 'howto', 'user', """
+    page(USER, 'import-file', 'Import Files in Bookmarks', 'howto', 'user', """
 Add the bookmarks of an [[export file>>doc:@USER@.export.WebHome]] to your [[bookmarks>>doc:@USER@.WebHome]], or replace them with it.
 
 1. [[Open your bookmarks>>doc:@USER@.open.WebHome]].
@@ -200,7 +200,10 @@ When adding, a folder of the file is merged with the folder of the same name at 
 No. Export your bookmarks first if you may need them again.
 """, attachments=['import-button.png', 'import-options.png', 'import-done.png']),
 
-    page(USER, 'bookmarks-macro', 'Bookmarks Macro', 'reference', 'user', """
+    # On www.xwiki.org this page uses the macro template: its content is split into the description, usage,
+    # parameters and examples fields of a DocApp.Code.RenderingMacroClass object, and the page content is empty.
+    # It is kept here as a single content, in that order, which docpages.py can lint.
+    page(USER, 'bookmarks-macro', '"bookmarks" Macro', 'reference', 'user', """
 The ##bookmarks## macro displays a [[bookmarks page>>doc:@USER@.open.WebHome]] in any wiki page, where the reader manages their [[folders>>doc:@USER@.organize-folders.WebHome]] and [[Panel selection>>doc:@USER@.select-panel.WebHome]]. It is in the "Navigation" category of the macros, and must stand on its own line.
 
 {{code language="none"}}
@@ -224,16 +227,16 @@ The ##bookmarks## macro displays a [[bookmarks page>>doc:@USER@.open.WebHome]] i
 
 To display the bookmarks of another user, the page holding the macro must also be saved by an administrator of the wiki, as explained in [[Advanced Bookmarks Storage and Privacy>>doc:@ADMIN@.storage-privacy.WebHome]].
 """, related="""
-* [[Manage the Bookmarks of Another User>>doc:@ADMIN@.manage-another-user.WebHome]]
+* [[Manage the Bookmarks of Another User>>doc:@ADMIN@.manage-user.WebHome]]
 """),
 
     # -------------------------------------------------------- Administrators
     page(ADMIN, None, 'Advanced Bookmarks', 'explanation', 'administrator', """
-[[Advanced Bookmarks>>doc:@EXT_PAGE@]] lets each user keep private bookmarks of wiki pages, in folders, with a star on every page and a Panel.
+[[Advanced Bookmarks>>doc:@EXT_PAGE@]] lets each user keep private bookmarks of wiki pages, in folders, with a star on every page and a Panel. As an administrator you can:
 
 * [[Install Advanced Bookmarks>>doc:@ADMIN@.install.WebHome]] and add its Panel.
 * [[Advanced Bookmarks Settings>>doc:@ADMIN@.settings.WebHome]] of each wiki: Panel size, star and excluded pages.
-* [[Manage the Bookmarks of Another User>>doc:@ADMIN@.manage-another-user.WebHome]], for support.
+* [[Manage the Bookmarks of Another User>>doc:@ADMIN@.manage-user.WebHome]], for support.
 * [[Export All the Bookmarks of a Wiki>>doc:@ADMIN@.export-wiki.WebHome]], and [[Import the Bookmarks of a Wiki>>doc:@ADMIN@.import-wiki.WebHome]].
 * [[Back Up the Advanced Bookmarks Core>>doc:@ADMIN@.back-up.WebHome]].
 * [[Advanced Bookmarks Limits>>doc:@ADMIN@.limits.WebHome]].
@@ -241,7 +244,7 @@ To display the bookmarks of another user, the page holding the macro must also b
 """, faq="""
 == What happens to the bookmarks of a renamed user? ==
 
-XWiki handles the rename as the deletion of the old user, so their bookmarks are erased. [[Export them>>doc:@ADMIN@.manage-another-user.WebHome]] before the rename, then import the file for the new user.
+XWiki handles the rename as the deletion of the old user, so their bookmarks are erased. [[Export them>>doc:@ADMIN@.manage-user.WebHome]] before the rename, then import the file for the new user.
 
 == Which bookmarks does the profile of a global user show? ==
 
@@ -289,7 +292,7 @@ The star and the administration tools only work when the author of their pages a
 Plan one: an upgrade replaces a farm JAR, and some other extensions may stay partly inactive until XWiki restarts.
 """, attachments=['panels-administration.png', 'star-panel-page.png']),
 
-    page(ADMIN, 'settings', 'Advanced Bookmarks Settings', 'reference', 'administrator', """
+    page(ADMIN, 'settings', 'Bookmarks Settings', 'reference', 'administrator', """
 Each wiki has its own settings for [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]], in "Administration > Other > Advanced Bookmarks". Only the administrators of the wiki can change them, and a wiki never configured uses the defaults.
 
 {{image reference="settings-section.png" size="extra" alt="Advanced Bookmarks section of the wiki administration"/}}
@@ -302,7 +305,7 @@ Each wiki has its own settings for [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]], 
 The pages of the extension itself, the ##AdvancedBookmarks## space and ##Panels.MyBookmarks##, can never be bookmarked.
 """, attachments=['settings-section.png']),
 
-    page(ADMIN, 'manage-another-user', 'Manage the Bookmarks of Another User', 'howto', 'administrator', """
+    page(ADMIN, 'manage-user', 'Manage another User', 'howto', 'administrator', """
 Open the [[bookmarks>>doc:@ADMIN@.WebHome]] of a user of your wiki to help them, for instance to export or restore them.
 
 1. [[Open your own bookmarks page>>doc:@USER@.open.WebHome]].
@@ -310,31 +313,31 @@ Open the [[bookmarks>>doc:@ADMIN@.WebHome]] of a user of your wiki to help them,
 {{image reference="user-picker.png" size="large" alt="User picker of the bookmarks page"/}}
 )))
 1. The bookmarks of the user open in a new tab, under a message recalling whose bookmarks they are:(((
-{{image reference="other-user-bookmarks.png" size="large" alt="Bookmarks of another user, with the reminder message"/}}
+{{image reference="user-bookmarks.png" size="large" alt="Bookmarks of another user, with the reminder message"/}}
 )))
 """, faq="""
 == Can I link to the bookmarks of a user? ==
 
 Yes, add the ##user## parameter to the bookmarks page, such as ##AdvancedBookmarks.WebHome?user=XWiki.jdoe##.
-""", attachments=['user-picker.png', 'other-user-bookmarks.png']),
+""", attachments=['user-picker.png', 'user-bookmarks.png']),
 
-    page(ADMIN, 'export-wiki', 'Export All the Bookmarks of a Wiki', 'howto', 'administrator', """
+    page(ADMIN, 'export-wiki', 'Export Bookmarks of all Users of a Wiki', 'howto', 'administrator', """
 Save the bookmarks of all the users of the wiki to a single file, as a [[backup>>doc:@ADMIN@.back-up.WebHome]] or to move them to another wiki.
 
 1. [[Open the Advanced Bookmarks settings>>doc:@ADMIN@.settings.WebHome]].
 1. Click "Export all the bookmarks".(((
-{{image reference="export-all-button.png" size="large" alt="Export all the bookmarks button"/}}
+{{image reference="export-bookmarks-button.png" size="large" alt="Export all the bookmarks button"/}}
 )))
 1. Your browser downloads the file ##bookmarks-wiki-<wiki>-<date>.json##, and a message gives the number of users exported:(((
-{{image reference="export-all-done.png" size="large" alt="Message giving the number of exported users"/}}
+{{image reference="export-bookmarks-done.png" size="large" alt="Message giving the number of exported users"/}}
 )))
 """, faq="""
 == Why are some users skipped? ==
 
 Their bookmarks could not be read. The server log names them.
-""", attachments=['export-all-button.png', 'export-all-done.png']),
+""", attachments=['export-bookmarks-button.png', 'export-bookmarks-done.png']),
 
-    page(ADMIN, 'import-wiki', 'Import the Bookmarks of a Wiki', 'howto', 'administrator', """
+    page(ADMIN, 'import-wiki', 'Import Bookmarks from a Wiki Export', 'howto', 'administrator', """
 Restore a [[wiki export>>doc:@ADMIN@.export-wiki.WebHome]] user by user, in the background.
 
 1. [[Open the Advanced Bookmarks settings>>doc:@ADMIN@.settings.WebHome]].
@@ -361,7 +364,7 @@ Nothing is changed: the whole file is checked before the first user is imported.
 No, only one import of a wiki runs at a time.
 """, attachments=['wiki-import-button.png', 'wiki-import-options.png', 'wiki-import-done.png']),
 
-    page(ADMIN, 'back-up', 'Back Up the Advanced Bookmarks Core', 'howto', 'administrator', """
+    page(ADMIN, 'back-up', 'Back Up the Advanced Bookmarks Solr Core', 'howto', 'administrator', """
 Copy the Solr core of [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]], which XWiki cannot rebuild from its database. Back it up together with the database, so that both copies match.
 
 1. Stop XWiki.
@@ -395,7 +398,7 @@ Yes, [[export all the bookmarks of each wiki>>doc:@ADMIN@.export-wiki.WebHome]];
 The suffix is the major version of Solr used by XWiki.
 """),
 
-    page(ADMIN, 'limits', 'Advanced Bookmarks Limits', 'reference', 'administrator', """
+    page(ADMIN, 'limits', 'Limits of Advanced Bookmarks', 'reference', 'administrator', """
 The limits of [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]] protect the storage and the server. An operation that would exceed one is refused with a message, and nothing is changed.
 
 |=Limit|=Value|=What it applies to
@@ -407,7 +410,7 @@ The limits of [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]] protect the storage an
 |Wiki export file|32 MB and 10,000 users|File imported by an administrator.
 """),
 
-    page(ADMIN, 'storage-privacy', 'Advanced Bookmarks Storage and Privacy', 'explanation', 'administrator', """
+    page(ADMIN, 'storage-privacy', 'Advanced Bookmarks Architecture and Security', 'explanation', 'administrator', """
 [[Advanced Bookmarks>>doc:@ADMIN@.WebHome]] keeps bookmarks outside the XWiki database, and checks every access on the server.
 
 == Storage ==
@@ -434,7 +437,7 @@ Bookmarks are stored in a dedicated Solr core, ##advancedbookmarks##, shared by 
 
 The extension does not need Programming Rights to run.
 
-* Users read and modify only their own bookmarks. The administrators of a wiki can also [[manage those of any user>>doc:@ADMIN@.manage-another-user.WebHome]] of that wiki, provided the page running the operation was written by an administrator too, so that a script written by someone else cannot use their rights.
+* Users read and modify only their own bookmarks. The administrators of a wiki can also [[manage those of any user>>doc:@ADMIN@.manage-user.WebHome]] of that wiki, provided the page running the operation was written by an administrator too, so that a script written by someone else cannot use their rights.
 * Guests have no bookmarks.
 * A page can only be bookmarked by a user who can view it. The link and the status of a bookmarked page are only given to users who can view it.
 * Modifications are only accepted in POST requests carrying a valid CSRF token.
@@ -471,7 +474,7 @@ The bookmarks of a user are one Solr document per wiki, holding the folders and 
 * [[Advanced Bookmarks (for Administrators)>>doc:@ADMIN@.WebHome]]
 """),
 
-    page(DEV, 'script-services', 'Advanced Bookmarks Script Services', 'reference', 'developer', """
+    page(DEV, 'script-services', 'Script Services', 'reference', 'developer', """
 ##$services.advancedbookmarks## gives scripts access to the bookmarks of the [[current wiki>>doc:@DEV@.WebHome]]. Each method returns a map ready to be serialized as JSON, with an HTTP status code under the ##status## key and, on failure, an ##error## key. Write methods only accept POST requests carrying a valid CSRF token in the ##form_token## parameter. The ##admin## methods return ##forbidden## to the users who do not administer the wiki.
 
 |=Member|=Returns|=Default|=What it does
@@ -515,7 +518,7 @@ You have 7 bookmarks.
 {{/code}}
 """),
 
-    page(DEV, 'http-service', 'Advanced Bookmarks HTTP Service', 'reference', 'developer', """
+    page(DEV, 'http-service', 'HTTP Service API', 'reference', 'developer', """
 The page ##AdvancedBookmarks.Code.Service## exposes the [[script services>>doc:@DEV@.script-services.WebHome]] over HTTP, for JavaScript. Call it with the ##get## action and an ##operation## parameter: it answers with the JSON result of the matching method, under the same HTTP status.
 
 |=Operation|=Request|=Parameters|=Method called
@@ -549,7 +552,7 @@ The console then shows:
 {{/code}}
 """),
 
-    page(DEV, 'export-file-format', 'Bookmark Export File Format', 'reference', 'developer', """
+    page(DEV, 'export-file-format', 'JSON Export File Format', 'reference', 'developer', """
 [[Users>>doc:@USER@.export.WebHome]] and [[administrators>>doc:@ADMIN@.export-wiki.WebHome]] export bookmarks as JSON files. Page references are written without their wiki, so that a file can be imported into another wiki.
 
 |=Key|=Type|=What it holds
@@ -598,7 +601,7 @@ SHOTS = 'shots'
 PIN = {
     USER + '.WebHome': ['open', 'add-page', 'organize-folders', 'select-panel', 'export', 'import-file',
                         'bookmarks-macro'],
-    ADMIN + '.WebHome': ['install', 'settings', 'manage-another-user', 'export-wiki', 'import-wiki', 'back-up',
+    ADMIN + '.WebHome': ['install', 'settings', 'manage-user', 'export-wiki', 'import-wiki', 'back-up',
                          'limits', 'storage-privacy'],
     DEV + '.WebHome': ['script-services', 'http-service', 'export-file-format'],
 }
